@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+    background-color: grey;
+}
+
+.text {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+}
+
+.introtext {
+    padding: 10px;
+    background-color: black;
+    color: white;
+}

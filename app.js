@@ -1,18 +1,26 @@
-
+let uNum = document.getElementById("getNumber")
+uNum.addEventListener("keydown", function (e) { 
+  if (e.keyCode == 13) {
+     run(e)
+   } 
+})
+                     
+      
 
 function run() {
     let x = document.getElementById("paragraph")
-    x.innerHTML = "hello World!>!>?!"
+    x.innerHTML = "Results!"
     x.style.backgroundColor = "black";
     x.style.color = "white";
     x.style.padding = "30px;"
+    x.style.margin = "0;"
     ranNum();
     userNum();
     compare();
 }
 
 function ranNum() {
-    let ran = Math.floor(Math.random() * 10)
+    let ran = Math.floor(Math.random() * 5 + 1)
     
     let x = document.getElementById("random")
 
@@ -21,6 +29,7 @@ function ranNum() {
     x.style.color = "white";
     x.style.textAlign = "center";
     x.style.padding = "30px;"
+    x.style.margin = "0;"
 
     return ran;
 }
@@ -32,12 +41,11 @@ function userNum() {
 
     document.getElementById("userNumber").innerHTML = user;
 
-    alert(user);
-
     x.style.backgroundColor = "black";
     x.style.color = "white";
     x.style.textAlign = "center";
     x.style.padding = "30px;"
+    x.style.margin = "0;"
 
     return user
 
@@ -46,10 +54,19 @@ function userNum() {
 function compare() {
     let a = userNum();
     let b = ranNum();
+    let x = document.getElementById("compare")
+    x.style.backgroundColor = "black";
+    x.style.color = "white";
+    x.style.textAlign = "center";
+    x.style.padding = "30px;"
+    x.style.margin = "0;"
+
 
     if (a != b) {
-        document.getElementById("compare").innerHTML = "did not guess right!"
+        x.style.backgroundColor = "red";
+        x.innerHTML = "Aww man! You guessed wrong!"
     } else {
-        document.getElementById("compare").innerHTML = "yes guees right"
+        x.style.backgroundColor = "green";
+        x.innerHTML = "Wow! You guess right!"
     }
 }
